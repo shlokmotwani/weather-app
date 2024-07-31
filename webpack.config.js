@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   mode: "none",
+  devtool: 'inline-source-map',
   plugins: [
     new htmlWebpackPlugin({
       template: "./src/index.html",
