@@ -72,10 +72,10 @@ function loadWeatherCard() {
   contentDiv.appendChild(weatherCard);
 }
 
-fetchButton.addEventListener("click", async (event) => {
-  contentDiv.innerHTML = "";
-  await getWeatherReport();
-  extractNecessaryDetails();
-  loadWeatherCard();
-  event.preventDefault();
-});
+// fetchButton.addEventListener("click", async (event) => {
+//   contentDiv.innerHTML = "";
+//   await getWeatherReport();
+//   extractNecessaryDetails();
+//   loadWeatherCard();
+//   event.preventDefault();
+// });
