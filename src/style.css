@@ -1,12 +1,22 @@
+@font-face {
+  font-family: MadeTommy;
+  src: url(./assets/MadeTommy.otf);
+}
+
 :root {
   --bg-color: #0c0a09;
+  --main-div-border-color: antiquewhite;
   --form-bg-color: #1c1917;
+  --font-color: antiquewhite;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--font-color);
+  font-size: 1.2rem;
+  font-family: MadeTommy;
 }
 
 html,
@@ -26,9 +36,13 @@ body {
 
 #main{
   width: 60%;
+  min-width: 750px;
   height: 85%;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
+  border: 3px solid var(--main-div-border-color);
+  box-shadow: 1px 1px 10px var(--main-div-border-color);
 }
 
 #top-div,
@@ -44,28 +58,33 @@ body {
   width: 100%;
   height: 100%;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--main-div-border-color);
+  padding: 30px;
+}
+
+#top-left div,
+#top-right div{
+  margin: 7px 0;
 }
 
 #top-left{
-  background-color: blue;
 }
 
 #top-right{
-  background-color: pink;
 }
 
 #bottom-div{
-  background-color: yellowgreen;
   flex-direction: column;
 }
 
 #bottom-top{
-  background-color: orange;
   flex: 1;
 }
 
 #bottom-bottom{
-  background-color: orangered;
   flex: 3;
 }
 
@@ -73,6 +92,7 @@ body {
 #bottom-bottom{
   width: 100%;
   height: 100%;
+  border: 1px solid var(--main-div-border-color);
 }
 
 form{
