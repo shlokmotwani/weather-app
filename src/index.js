@@ -1,4 +1,11 @@
 import "./style.css";
+import feelsLikeImage from './assets/icons/feelslike.svg';
+import humidityImage from './assets/icons/humidity.svg';
+import uvindexImage from './assets/icons/uvindex.svg';
+import windspeedImage from './assets/icons/windspeed.svg';
+import sunriseImage from './assets/icons/sunrise.svg';
+import sunsetImage from './assets/icons/sunset.svg';
+
 
 const URL_LEFT =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
@@ -110,31 +117,38 @@ function loadTopRightCard() {
     {
       text: "Feels like",
       value: weatherReportJSONExtracted.feelslike,
+      image: feelsLikeImage,
     },
     {
       text: "Humidity",
       value: weatherReportJSONExtracted.humidity,
+      image: humidityImage,
     },
     {
       text: "UV Index",
       value: weatherReportJSONExtracted.uvindex,
+      image: uvindexImage,
     },
     {
       text: "Wind Speed",
       value: weatherReportJSONExtracted.windspeed,
+      image: windspeedImage,
     },
     {
       text: "Sunrise",
       value: weatherReportJSONExtracted.sunrise,
+      image: sunriseImage,
     },
     {
       text: "Sunset",
       value: weatherReportJSONExtracted.sunset,
+      image: sunsetImage,
     },
   ];
 
   itemsData.forEach((item) => {
     let itemDiv = document.createElement("div");
+    let itemImage = document.createElement('div');
     let itemText = document.createElement("span");
     let itemValue = document.createElement("div");
 
@@ -147,9 +161,14 @@ function loadTopRightCard() {
     width: 100%;
     `;
 
+    itemDiv.appendChild(itemImage);
     itemDiv.appendChild(itemText);
     itemDiv.appendChild(itemValue);
 
+    let image = new Image();
+    image.src = item.image;
+    image.style.height = '40px';
+    itemImage.appendChild(image);
     itemText.textContent = item.text;
     itemValue.textContent = item.value;
 
